@@ -541,6 +541,20 @@
       background: linear-gradient(135deg, #64172b, #b87558 55%, #f1c980)
     }
 
+    .couple-photo-img {
+      width: 100%;
+      height: 100%;
+      min-height: 500px;
+      display: block;
+      object-fit: cover;
+      object-position: center center;
+      filter: saturate(1.02) contrast(1.02);
+    }
+
+    .couple-photo-slide {
+      background: #f3e7d2;
+    }
+
     .slide-photo:before {
       content: "";
       position: absolute;
@@ -656,6 +670,11 @@
 
       .slide-photo {
         min-height: 330px
+      }
+
+      .couple-photo-img {
+        min-height: 330px;
+        object-position: center center;
       }
 
       .slide-copy {
@@ -1387,13 +1406,8 @@
                 </div>
               </article>
               <article class="slide">
-                <div class="slide-photo" style="background:linear-gradient(135deg,#30101a,#8b5c39 55%,#e4bd68)">
-                  <div class="photo-placeholder">
-                    <div>
-                      <div class="silhouette">💑</div>
-                      <small>Couple Photo</small>
-                    </div>
-                  </div>
+                <div class="slide-photo couple-photo-slide">
+                  <img src="couple-photo.jpg" alt="Sunil and Namita couple photo" class="couple-photo-img">
                 </div>
                 <div class="slide-copy">
                   <div class="mini">Together</div>
