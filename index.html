@@ -510,7 +510,7 @@
 
     .gallery {
       position: relative;
-      max-width: 1000px;
+      max-width: 600px;
       margin: auto
     }
 
@@ -528,14 +528,14 @@
 
     .slide {
       min-width: 100%;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      min-height: 500px;
+      display: flex;
+      flex-direction: column;
       background: linear-gradient(135deg, #fffaf0, #f5e4c8)
     }
 
     .slide-photo {
-      min-height: 500px;
+      width: 100%;
+      height: 480px;
       position: relative;
       overflow: hidden;
       background: linear-gradient(135deg, #64172b, #b87558 55%, #f1c980)
@@ -544,7 +544,6 @@
     .couple-photo-img {
       width: 100%;
       height: 100%;
-      min-height: 500px;
       display: block;
       object-fit: cover;
       object-position: center center;
@@ -560,35 +559,13 @@
       position: absolute;
       inset: 25px;
       border: 1px solid rgba(255, 238, 182, .7);
-      z-index: 2
-    }
-
-    .photo-placeholder {
-      position: absolute;
-      inset: 0;
-      display: grid;
-      place-items: center;
-      text-align: center;
-      padding: 30px;
-      color: #fff
-    }
-
-    .photo-placeholder .silhouette {
-      font-size: 120px;
-      line-height: 1;
-      filter: drop-shadow(0 12px 20px rgba(0, 0, 0, .2))
-    }
-
-    .photo-placeholder small {
-      display: block;
-      margin-top: 15px;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-      opacity: .85
+      z-index: 2;
+      pointer-events: none;
     }
 
     .slide-copy {
-      padding: 55px 45px;
+      padding: 35px 30px;
+      text-align: center;
       display: flex;
       flex-direction: column;
       justify-content: center
@@ -603,22 +580,23 @@
 
     .slide-copy h3 {
       font-family: "Great Vibes", cursive;
-      font-size: clamp(55px, 7vw, 85px);
+      font-size: clamp(45px, 6vw, 65px);
       font-weight: 400;
       color: var(--wine);
-      margin: 12px 0
+      margin: 8px 0
     }
 
     .slide-copy p {
       font-family: "Cormorant Garamond", serif;
-      font-size: 24px;
+      font-size: 20px;
       line-height: 1.5;
-      color: #624c52
+      color: #624c52;
+      margin: 0
     }
 
     .slider-btn {
       position: absolute;
-      top: 50%;
+      top: 240px;
       transform: translateY(-50%);
       z-index: 4;
       width: 44px;
@@ -664,22 +642,8 @@
         grid-template-columns: repeat(2, 1fr)
       }
 
-      .slide {
-        grid-template-columns: 1fr
-      }
-
       .slide-photo {
-        min-height: 330px
-      }
-
-      .couple-photo-img {
-        min-height: 330px;
-        object-position: center center;
-      }
-
-      .slide-copy {
-        padding: 35px 28px;
-        text-align: center
+        height: 360px
       }
 
       .slider-btn.prev {
@@ -713,31 +677,17 @@
       margin: auto;
       border: 7px solid #f7e2a7;
       outline: 1px solid #bd8c38;
-      background: radial-gradient(circle at 50% 38%, #ffd9bd 0 17%, transparent 18%), radial-gradient(circle at 50% 65%, #d69b65 0 31%, transparent 32%), linear-gradient(135deg, #8a4c34, #e9bd7c);
       box-shadow: 0 18px 55px rgba(75, 16, 32, .2);
       position: relative;
       overflow: hidden
     }
 
-    .baby-photo:before {
-      content: "";
-      position: absolute;
-      width: 95px;
-      height: 75px;
-      border-radius: 50%;
-      background: #3c2018;
-      left: 88px;
-      top: 65px;
-      box-shadow: 0 -14px 0 5px #3c2018
-    }
-
-    .baby-photo:after {
-      content: "♡";
-      position: absolute;
-      right: 20px;
-      top: 20px;
-      color: #fff;
-      font-size: 30px
+    .baby-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
     }
 
     .baby-copy .kicker {
@@ -1370,31 +1320,11 @@
       <div class="container">
         <div class="kicker">A little glimpse of forever</div>
         <h2>Meet the Couple</h2>
-        <p class="sub">A royal little photo journey of the bride, the groom and the two hearts becoming one.</p>
+        <p class="sub">A royal little photo journey of the two hearts becoming one.</p>
         <div class="gallery">
           <button class="slider-btn prev" id="prevSlide" aria-label="Previous slide">‹</button>
           <div class="slider-window">
             <div class="slides" id="slides">
-              <article class="slide">
-                <div class="slide-photo">
-                  <img src="sunil.jpg" alt="Sunil photo" class="couple-photo-img">
-                </div>
-                <div class="slide-copy">
-                  <div class="mini">The Groom</div>
-                  <h3>Sunil</h3>
-                  <p>“The beginning of my forever starts with a smile from her.”</p>
-                </div>
-              </article>
-              <article class="slide">
-                <div class="slide-photo" style="background:linear-gradient(135deg,#7b1e31,#d08a79 55%,#f2d18c)">
-                  <img src="namita.jpg" alt="Namita photo" class="couple-photo-img">
-                </div>
-                <div class="slide-copy">
-                  <div class="mini">The Bride</div>
-                  <h3>Namita</h3>
-                  <p>“A thousand little dreams, and one beautiful forever.”</p>
-                </div>
-              </article>
               <article class="slide">
                 <div class="slide-photo couple-photo-slide">
                   <img src="couple-photo.jpg" alt="Sunil and Namita couple photo" class="couple-photo-img">
@@ -1517,7 +1447,9 @@
 
     <section class="section baby-section reveal">
       <div class="container baby-wrap">
-        <div class="baby-photo" aria-label="Sample baby illustration"></div>
+        <div class="baby-photo" aria-label="Little guest photo">
+          <img src="kiwi.jpg" alt="Cute Baby Photo">
+        </div>
         <div class="baby-copy">
           <div class="kicker">One very important guest</div>
           <h2>Mere Mama ki Shaadi m<br>Jalul Jalul Aana ♥</h2>
@@ -1621,9 +1553,17 @@
       clearInterval(slideTimer);
       slideTimer = setInterval(() => goToSlide(currentSlide + 1), 5000);
     }
-    document.getElementById('prevSlide').addEventListener('click', () => { goToSlide(currentSlide - 1); restartSlider() });
-    document.getElementById('nextSlide').addEventListener('click', () => { goToSlide(currentSlide + 1); restartSlider() });
-    restartSlider();
+    const prevBtn = document.getElementById('prevSlide');
+    const nextBtn = document.getElementById('nextSlide');
+    if (prevBtn) prevBtn.addEventListener('click', () => { goToSlide(currentSlide - 1); restartSlider() });
+    if (nextBtn) nextBtn.addEventListener('click', () => { goToSlide(currentSlide + 1); restartSlider() });
+    if (slideItems.length > 1) {
+      restartSlider();
+    } else {
+      if (prevBtn) prevBtn.style.display = 'none';
+      if (nextBtn) nextBtn.style.display = 'none';
+      if (dotsEl) dotsEl.style.display = 'none';
+    }
 
 
     // Wedding countdown — 10 December 2026 at 8:00 PM IST
