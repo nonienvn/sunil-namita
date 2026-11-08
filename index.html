@@ -1372,9 +1372,29 @@
         <h2>Meet the Couple</h2>
         <p class="sub">A royal little photo journey of the bride, the groom and the two hearts becoming one.</p>
         <div class="gallery">
-          
+          <button class="slider-btn prev" id="prevSlide" aria-label="Previous slide">‹</button>
           <div class="slider-window">
-            <div >
+            <div class="slides" id="slides">
+              <article class="slide">
+                <div class="slide-photo">
+                  <img src="sunil.jpg" alt="Sunil photo" class="couple-photo-img">
+                </div>
+                <div class="slide-copy">
+                  <div class="mini">The Groom</div>
+                  <h3>Sunil</h3>
+                  <p>“The beginning of my forever starts with a smile from her.”</p>
+                </div>
+              </article>
+              <article class="slide">
+                <div class="slide-photo" style="background:linear-gradient(135deg,#7b1e31,#d08a79 55%,#f2d18c)">
+                  <img src="namita.jpg" alt="Namita photo" class="couple-photo-img">
+                </div>
+                <div class="slide-copy">
+                  <div class="mini">The Bride</div>
+                  <h3>Namita</h3>
+                  <p>“A thousand little dreams, and one beautiful forever.”</p>
+                </div>
+              </article>
               <article class="slide">
                 <div class="slide-photo couple-photo-slide">
                   <img src="couple-photo.jpg" alt="Sunil and Namita couple photo" class="couple-photo-img">
@@ -1387,7 +1407,7 @@
               </article>
             </div>
           </div>
-       
+          <button class="slider-btn next" id="nextSlide" aria-label="Next slide">›</button>
           <div class="dots" id="dots"></div>
         </div>
       </div>
